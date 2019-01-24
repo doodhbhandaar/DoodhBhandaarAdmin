@@ -1,7 +1,6 @@
 package com.doodhbhandaar.dbadmin;
 
-public class CustomerData {
-
+public class CustomerData{ //jkgjk
     String customerImage;
     String customerPhonenumber;
     String customerName;

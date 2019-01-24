@@ -1,4 +1,4 @@
-#Thu Jan 24 23:39:59 IST 2019
-base.0=/home/shad0w/Desktop/DoodhBhandaar/app/build/intermediates/transforms/dexMerger/debug/9
+#Fri Jan 25 01:07:00 IST 2019
+base.0=F\:\\notes\\doodhbhandar from github\\DoodhBhandaarAdmin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
 path.0=classes.dex
 renamed.0=classes.dex
