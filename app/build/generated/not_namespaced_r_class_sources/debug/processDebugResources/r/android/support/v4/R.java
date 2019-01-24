@@ -133,7 +133,7 @@ public final class R {
         private integer() {}
 
         public static final int cancel_button_image_alpha = 0x7f090004;
-        public static final int status_bar_notification_info_maxnum = 0x7f090009;
+        public static final int status_bar_notification_info_maxnum = 0x7f09000a;
     }
     public static final class layout {
         private layout() {}
@@ -157,7 +157,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0d003f;
+        public static final int status_bar_notification_info_overflow = 0x7f0d0040;
     }
     public static final class style {
         private style() {}
