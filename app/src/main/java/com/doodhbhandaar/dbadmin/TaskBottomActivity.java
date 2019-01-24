@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class TaskBottomActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private String a="jkbbdjk";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
