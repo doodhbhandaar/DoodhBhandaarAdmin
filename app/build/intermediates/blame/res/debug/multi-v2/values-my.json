@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/shad0w/Desktop/DoodhBhandaar/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
+            "outputFile": "F:\\notes\\doodhbhandar from github\\DoodhBhandaarAdmin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my\\values-my.xml",
             "map": [
                 {
-                    "source": "/home/shad0w/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/04e4c5c66ef4d693162c8a9c4372a71f/res/values-my/values-my.xml",
+                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\e24191581462d4925f139bfcc7fd5548\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/shad0w/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/de2709d3f5c0a3f3ad047a3e28cbc06b/res/values-my/values-my.xml",
+                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\66e4488ea5aaa76ef8ddf4899e8d27f8\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
