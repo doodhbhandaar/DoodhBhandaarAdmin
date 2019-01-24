@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/shad0w/Desktop/DoodhBhandaar/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "/home/shad0w/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/04e4c5c66ef4d693162c8a9c4372a71f/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

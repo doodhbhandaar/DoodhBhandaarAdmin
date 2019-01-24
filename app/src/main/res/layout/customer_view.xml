@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="5sp"
+    android:layout_height="100sp">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:id="@+id/customer_image"
+        android:layout_height="match_parent"
+        android:src="@color/colorAccent"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@color/colorPrimary"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/customer_name"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:text="Name"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@color/colorPrimaryDark"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:id="@+id/customer_phonenumber"
+                android:text="phone Number"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@color/colorPrimary"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:id="@+id/customer_address"
+                android:text="Address"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

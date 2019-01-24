@@ -1,0 +1,4 @@
+#Thu Jan 24 23:31:20 IST 2019
+base.0=/home/shad0w/Desktop/DoodhBhandaar/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/shad0w/Desktop/DoodhBhandaar/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/shad0w/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/04e4c5c66ef4d693162c8a9c4372a71f/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}
