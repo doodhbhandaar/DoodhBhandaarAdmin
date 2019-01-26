@@ -97,6 +97,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+        Button addDBbutton = findViewById(R.id.button2);
+        addDBbutton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterDeliveryManActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void loginToTaskActivity(){
         String username = mEmailView.getText().toString();

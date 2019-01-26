@@ -777,10 +777,12 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_call_black_24dp
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_location_on_black_24dp
 drawable ic_menu_camera
 drawable ic_menu_gallery
 drawable ic_menu_manage
@@ -841,6 +843,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id button2
 id buttonPanel
 id cancel_action
 id center
@@ -872,6 +875,9 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id editText
+id editText2
+id editText3
 id edit_query
 id email
 id email_login_form
@@ -945,6 +951,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id register
 id right
 id right_icon
 id right_side
@@ -1057,6 +1064,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
+layout activity_register_delivery_man
 layout activity_task_bottom
 layout customer_view
 layout design_bottom_navigation_item
@@ -1137,17 +1145,10 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_pattern
 string common_google_play_services_unknown_issue
-string default_web_client_id
 string error_field_required
 string error_incorrect_password
 string error_invalid_email
 string error_invalid_password
-string firebase_database_url
-string gcm_defaultSenderId
-string google_api_key
-string google_app_id
-string google_crash_reporting_api_key
-string google_storage_bucket
 string hello_blank_fragment
 string nav_header_desc
 string nav_header_subtitle
@@ -1160,7 +1161,6 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string permission_rationale
-string project_id
 string prompt_email
 string prompt_password
 string search_menu_title

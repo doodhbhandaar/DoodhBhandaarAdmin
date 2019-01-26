@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "527099760671-3ijjbq659lbv80aa14ui2btij5r99jm3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doodhbhandaar.dbadmin",
+            "certificate_hash": "df6a61538ecba383827197a1e1cc8476cdf6669c"
+          }
+        },
+        {
           "client_id": "527099760671-lij9oup5oo3kkebqttiekklfo9gg64hj.apps.googleusercontent.com",
           "client_type": 3
         }
