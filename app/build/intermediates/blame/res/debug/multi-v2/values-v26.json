@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\notes\\doodhbhandar from github\\DoodhBhandaarAdmin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\Shivam Kumar\\Documents\\DoodhBhandaarAdmin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\476daa138ca6a41df0cde733714ebb69\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\981f45e4ffd37f18ea64bcea0c021b03\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\e24191581462d4925f139bfcc7fd5548\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Shivam Kumar\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\bce6e987feb7a1980e7a437b5c127409\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
