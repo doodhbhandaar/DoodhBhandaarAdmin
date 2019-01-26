@@ -2,18 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/list_of_all_customers"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="Custmers" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/list_of_all_delivery_area"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="Delivery Boys" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_notifications2"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_notifications3"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Logout" />
 
 </menu>

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -20,9 +21,10 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_delivery_man);
 
+        FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
 //        firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
-        deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
+ deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
 
         Button registerButton = findViewById(R.id.register);
         final EditText nameEditText = findViewById(R.id.editText);

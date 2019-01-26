@@ -15,22 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "527099760671-aq20o5mmvbgvktk62hb598bh1u5rsl6a.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.doodhbhandaar.dbadmin",
-            "certificate_hash": "14f4cf5e8df6120630cfcb43acd56b741f9b0aaf"
-          }
-        },
-        {
-          "client_id": "527099760671-er03r9dv65nc5n9jb545spjqa7166ik2.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.doodhbhandaar.dbadmin",
-            "certificate_hash": "afd6305a9e24e707d0d08b05b58f563f1c3b99d5"
-          }
-        },
-        {
           "client_id": "527099760671-3ijjbq659lbv80aa14ui2btij5r99jm3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

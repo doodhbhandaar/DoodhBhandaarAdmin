@@ -24,14 +24,15 @@ public class TaskBottomActivity extends AppCompatActivity {
             Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
             Fragment fragment=new CustomersFragment();;
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.list_of_all_customers:
                     fragment=new CustomersFragment();
                     break;
-                case R.id.navigation_dashboard:
+                case R.id.list_of_all_delivery_area:
                     fragment=new ListofAllDeliveryAreasFragment();
                     break;
-                case R.id.navigation_notifications:
-                    return false;
+                case R.id.navigation_notifications3:
+                    // Code for logout
+                    break;
             }
             Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
             setFragment(fragment);
