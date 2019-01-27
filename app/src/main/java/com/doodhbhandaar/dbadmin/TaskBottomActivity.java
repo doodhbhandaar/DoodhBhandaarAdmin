@@ -36,6 +36,10 @@ public class TaskBottomActivity extends AppCompatActivity {
                     getInstance().signOut();
                     finish();
                     break;
+                case R.id.navigation_notifications2:
+                    // Code for logout
+                    fragment=new ListOfAllAreasFragment();
+                    break;
                 case R.id.list_of_all_delivery_boys:
                     return false;
 
