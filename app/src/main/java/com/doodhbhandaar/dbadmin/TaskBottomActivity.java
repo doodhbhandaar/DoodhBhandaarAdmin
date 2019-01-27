@@ -31,7 +31,7 @@ public class TaskBottomActivity extends AppCompatActivity {
                 case R.id.list_of_all_delivery_area:
                     fragment=new ListofAllDeliveryAreasFragment();
                     break;
-                case R.id.navigation_notifications3:
+                case R.id.Logout:
                     // Code for logout
                     getInstance().signOut();
                     finish();
@@ -41,8 +41,9 @@ public class TaskBottomActivity extends AppCompatActivity {
                     fragment=new ListOfAllAreasFragment();
                     break;
                 case R.id.list_of_all_delivery_boys:
-                    fragment =new DeliveryBoyFragment();
-                    break;
+                    return false;
+
+                 default: return false;
 
             }
             Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
