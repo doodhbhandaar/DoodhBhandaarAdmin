@@ -15,6 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -27,7 +30,7 @@ import java.util.ArrayList;
 public class ListofAllDeliveryAreasFragment extends Fragment {
 
     RecyclerView recyclerView;
-    ArrayList<DeliveriesReference> deliveryAreasItems;
+    ArrayList<DeliveryBoyReference> deliveryBoyItems;
     ListOfAllDeliveryAreasAdapter adapter;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference deliveryBoyReference;
@@ -44,18 +47,46 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
         View output= inflater.inflate(R.layout.fragment_listof_all_delivery_areas, container, false);
 
         recyclerView = output.findViewById(R.id.list_of_all_delivery_area_recyclerview);
-        deliveryAreasItems = new ArrayList<>();
+        deliveryBoyItems = new ArrayList<>();
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
+        deliveryBoyReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                DeliveryBoyReference deliveryBoyReference = dataSnapshot.getValue(DeliveryBoyReference.class);
+                deliveryBoyItems.add(deliveryBoyReference);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         for(int i=0;i<10;i++){
-            DeliveriesReference deliveriesReference=new DeliveriesReference();
-            deliveriesReference.area="address";
-            deliveriesReference.deliveryBoyName="name";
-            deliveriesReference.phonenumber="phonenumber11";
-            deliveryAreasItems.add(deliveriesReference);
+            DeliveryBoyReference deliveryBoyReference = new DeliveryBoyReference();
+            deliveryBoyReference.address="address";
+            deliveryBoyReference.name="name";
+            deliveryBoyReference.contactNo="phonenumber11";
+            deliveryBoyItems.add(deliveryBoyReference);
         }
-        adapter = new ListOfAllDeliveryAreasAdapter(getContext(),deliveryAreasItems);
+        adapter = new ListOfAllDeliveryAreasAdapter(getContext(),deliveryBoyItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

@@ -12,13 +12,13 @@ import java.util.ArrayList;
 
 public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHolderListOfAllDeliveryAreas> {
 
-    ArrayList<DeliveriesReference> deliveryAreasItems;
+    ArrayList<DeliveryBoyReference> deliveryBoyItems;
     LayoutInflater inflater;
 
 
-    public ListOfAllDeliveryAreasAdapter(Context context,ArrayList<DeliveriesReference> deliveryAreasItems){
+    public ListOfAllDeliveryAreasAdapter(Context context,ArrayList<DeliveryBoyReference> deliveryAreasItems){
         inflater=(LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        this.deliveryAreasItems=deliveryAreasItems;
+        this.deliveryBoyItems=deliveryAreasItems;
 
     }
 
@@ -31,15 +31,15 @@ public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderListOfAllDeliveryAreas holder, int position) {
-        DeliveriesReference deliveriesReference=deliveryAreasItems.get(position);
-        holder.deliveryboyName.setText(deliveriesReference.deliveryBoyName);
-        holder.deliveryboyPhonenumber.setText(deliveriesReference.phonenumber);
-        holder.deliveryboyAddress.setText(deliveriesReference.area);
+        DeliveryBoyReference deliveryBoyReference = deliveryBoyItems.get(position);
+        holder.deliveryboyName.setText(deliveryBoyReference.name);
+        holder.deliveryboyPhonenumber.setText(deliveryBoyReference.contactNo);
+        holder.deliveryboyAddress.setText(deliveryBoyReference.address);
 
     }
 
     @Override
     public int getItemCount() {
-        return deliveryAreasItems.size();
+        return deliveryBoyItems.size();
     }
 }

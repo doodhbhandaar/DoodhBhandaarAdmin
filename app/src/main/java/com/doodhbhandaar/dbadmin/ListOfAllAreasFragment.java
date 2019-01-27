@@ -68,7 +68,7 @@ public class ListOfAllAreasFragment extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 String ss = dataSnapshot.getValue(String.class);
                 areaItems.add(ss);
-                Toast.makeText(getContext(),s+ " +",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),s+ " +",Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
             }
 

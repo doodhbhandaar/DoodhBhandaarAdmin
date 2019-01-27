@@ -27,6 +27,7 @@ public class TaskBottomActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.list_of_all_customers:
                     fragment=new CustomersFragment();
+                    Toast.makeText(TaskBottomActivity.this,"Customer Fragment",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.list_of_all_delivery_area:
                     fragment=new ListofAllDeliveryAreasFragment();
