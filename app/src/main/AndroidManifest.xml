@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CustomerProfileActivity"></activity>
-        <activity android:name=".RegisterDeliveryManActivity" />
         <activity
             android:name=".TaskBottomActivity"
             android:label="@string/title_activity_task_bottom" />
