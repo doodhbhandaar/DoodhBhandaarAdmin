@@ -7,5 +7,6 @@ public class DeliveriesReference {
     String deliveryBoyName;
     String unit;
     String photoUrl;
+    String phonenumber;
     int cid;
 }

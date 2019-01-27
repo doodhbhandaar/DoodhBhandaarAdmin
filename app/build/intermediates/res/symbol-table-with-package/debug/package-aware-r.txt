@@ -815,6 +815,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_add_circle_black_24dp
 drawable ic_call_black_24dp
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
@@ -848,6 +849,7 @@ drawable tooltip_frame_light
 id ALT
 id CTRL
 id FUNCTION
+id Logout
 id META
 id SHIFT
 id SYM
@@ -909,6 +911,10 @@ id customer_recyclerview
 id dark
 id decor_content_parent
 id default_activity_button
+id deliveryboy_address
+id deliveryboy_image
+id deliveryboy_name
+id deliveryboy_phonenumber
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -917,9 +923,6 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id editText
-id editText2
-id editText3
 id edit_query
 id email
 id email_login_form
@@ -980,7 +983,6 @@ id nav_slideshow
 id navigation
 id navigation_header_container
 id navigation_notifications2
-id navigation_notifications3
 id never
 id none
 id normal
@@ -998,7 +1000,9 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
-id register
+id register_deliveryboy_address
+id register_deliveryboy_name
+id register_deliveryboy_phonenumber
 id right
 id right_icon
 id right_side
@@ -1048,7 +1052,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1130,7 +1133,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_customers
-layout fragment_delivery_boy
 layout fragment_listof_all_delivery_areas
 layout notification_action
 layout notification_action_tombstone

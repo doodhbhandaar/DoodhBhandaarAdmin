@@ -9,18 +9,18 @@
     <item
         android:id="@+id/list_of_all_delivery_area"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Delivery Boys" />
+        android:title="areas" />
 
     <item
         android:id="@+id/list_of_all_delivery_boys"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:title="Delivery Boys" />
     <item
         android:id="@+id/navigation_notifications2"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
     <item
-        android:id="@+id/navigation_notifications3"
+        android:id="@+id/Logout"
         android:icon="@drawable/ic_settings_power_black_24dp"
         android:title="Logout" />
 
