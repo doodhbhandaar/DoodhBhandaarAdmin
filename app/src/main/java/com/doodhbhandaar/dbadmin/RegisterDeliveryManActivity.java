@@ -24,7 +24,7 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
 //        firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
- deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
+        deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
 
         Button registerButton = findViewById(R.id.register);
         final EditText nameEditText = findViewById(R.id.editText);

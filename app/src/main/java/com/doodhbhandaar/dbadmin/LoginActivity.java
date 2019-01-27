@@ -31,6 +31,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +70,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private String PASSWORD = "abc";
     private String USERNAME = "abc@";
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +103,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
         Button addDBbutton = findViewById(R.id.button2);
         addDBbutton.setOnClickListener(new OnClickListener() {
             @Override
@@ -109,13 +118,35 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void loginToTaskActivity(){
         String username = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-        if(username.equals(USERNAME)&& password.equals(PASSWORD)){
-            Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,TaskBottomActivity.class);
-            startActivity(intent);
-        }else{
-            Toast.makeText(this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
-        }
+        mEmailView.setText("");
+        mPasswordView.setText("");
+//        firebaseAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if(task.isSuccessful()){
+//                    Toast.makeText(LoginActivity.this,"SignUp Successful",Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(LoginActivity.this,task.getException().toString(),Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+        firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this,TaskBottomActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+//        if(username.equals(USERNAME)&& password.equals(PASSWORD)){
+//            Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this,TaskBottomActivity.class);
+//            startActivity(intent);
+//        }else{
+//            Toast.makeText(this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
+//        }
     }
 
     private void populateAutoComplete() {
