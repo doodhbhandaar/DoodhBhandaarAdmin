@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 public class TaskBottomActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class TaskBottomActivity extends AppCompatActivity {
                     break;
                 case R.id.navigation_notifications3:
                     // Code for logout
+                    getInstance().signOut();
+                    finish();
                     break;
                 case R.id.list_of_all_delivery_boys:
                     fragment =new DeliveryBoyFragment();
