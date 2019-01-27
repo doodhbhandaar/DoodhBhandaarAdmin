@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -62,16 +63,29 @@ public class ListOfAllAreasFragment extends Fragment {
         FirebaseApp.initializeApp(getContext());
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         areasReference = firebaseDatabase.getReference("AREAS");
-        areasReference.addValueEventListener(new ValueEventListener() {
+
+        areasReference.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot dsp: dataSnapshot.getChildren()){
-                    String s = String.valueOf(dsp.getValue());
-                    if(s!=null)
-                        areaItems.add(s);
-//                    Toast.makeText(getContext(),s+ " +",Toast.LENGTH_SHORT).show();
-                }
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                String ss = dataSnapshot.getValue(String.class);
+                areaItems.add(ss);
+                Toast.makeText(getContext(),s+ " +",Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
             }
 
             @Override
