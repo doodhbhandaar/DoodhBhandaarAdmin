@@ -63,7 +63,6 @@ public class ListOfAllAreasFragment extends Fragment {
         FirebaseApp.initializeApp(getContext());
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         areasReference = firebaseDatabase.getReference("AREAS");
-
         areasReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
