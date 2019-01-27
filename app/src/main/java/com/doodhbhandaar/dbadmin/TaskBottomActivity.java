@@ -33,6 +33,10 @@ public class TaskBottomActivity extends AppCompatActivity {
                 case R.id.navigation_notifications3:
                     // Code for logout
                     break;
+                case R.id.list_of_all_delivery_boys:
+                    fragment =new DeliveryBoyFragment();
+                    break;
+
             }
             Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
             setFragment(fragment);
