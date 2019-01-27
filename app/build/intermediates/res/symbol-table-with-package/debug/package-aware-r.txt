@@ -95,6 +95,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cardBackgroundColor
+attr cardCornerRadius
+attr cardElevation
+attr cardMaxElevation
+attr cardPreventCornerOverlap
+attr cardUseCompatPadding
+attr cardViewStyle
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
@@ -128,6 +135,11 @@ attr contentInsetLeft
 attr contentInsetRight
 attr contentInsetStart
 attr contentInsetStartWithNavigation
+attr contentPadding
+attr contentPaddingBottom
+attr contentPaddingLeft
+attr contentPaddingRight
+attr contentPaddingTop
 attr contentScrim
 attr controlBackground
 attr coordinatorLayoutStyle
@@ -471,6 +483,10 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color cardview_dark_background
+color cardview_light_background
+color cardview_shadow_end_color
+color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
@@ -619,6 +635,9 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen cardview_compat_inset_shadow
+dimen cardview_default_elevation
+dimen cardview_default_radius
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -878,6 +897,9 @@ id adjust_width
 id alertTitle
 id all
 id always
+id area_add_edit_text
+id areas_recycler_view
+id areas_text_view
 id async
 id auto
 id barrier
@@ -932,6 +954,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab
+id fabAreasAdd
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1114,6 +1137,7 @@ layout abc_tooltip
 layout activity_login
 layout activity_register_delivery_man
 layout activity_task_bottom
+layout add_area_dialog_layout
 layout customer_view
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1131,7 +1155,9 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_customers
 layout fragment_delivery_boy
+layout fragment_list_of_all_areas
 layout fragment_listof_all_delivery_areas
+layout list_of_all_areas_view_holder
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1258,6 +1284,7 @@ style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
 style Base_Animation_AppCompat_DropDownUp
 style Base_Animation_AppCompat_Tooltip
+style Base_CardView
 style Base_DialogWindowTitle_AppCompat
 style Base_DialogWindowTitleBackground_AppCompat
 style Base_TextAppearance_AppCompat
@@ -1411,6 +1438,9 @@ style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style Base_Widget_Design_AppBarLayout
 style Base_Widget_Design_TabLayout
+style CardView
+style CardView_Dark
+style CardView_Light
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1641,6 +1671,7 @@ styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle a
 styleable BottomNavigationView elevation itemBackground itemIconTint itemTextColor menu
 styleable BottomSheetBehavior_Layout behavior_hideable behavior_peekHeight behavior_skipCollapsed
 styleable ButtonBarLayout allowStacking
+styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha
