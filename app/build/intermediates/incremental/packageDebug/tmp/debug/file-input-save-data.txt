@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Mon Jan 28 03:17:57 IST 2019
+#Tue Jan 29 00:22:02 IST 2019
 0.baseType=DIRECTORY
-0.base=C\:\\Users\\Shivam Kumar\\Documents\\DoodhbhandaarAdmin\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.base=C\:\\Users\\harshit\\AndroidStudioProjects\\DoodhBhandaarAdmin\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex
 0.set=DEX
 count=1

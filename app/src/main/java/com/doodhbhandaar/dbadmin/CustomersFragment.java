@@ -58,6 +58,10 @@ public class CustomersFragment extends Fragment {
             public void onViewClick(View view,int position) {
                 //code to edit
                 Intent intent = new Intent(getContext(),CustomerProfileActivity.class);
+                intent.putExtra("name",customerDataArrayList.get(position).customerName);
+                intent.putExtra("Address",customerDataArrayList.get(position).customerAddress);
+                intent.putExtra("PhoneNo",customerDataArrayList.get(position).customerPhonenumber);
+
                 startActivity(intent);
             }
         };
