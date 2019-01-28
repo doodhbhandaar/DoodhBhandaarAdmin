@@ -73,11 +73,6 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="369dp"
-                android:layout_height="wrap_content"
-                android:text="Add Delivery Boy" />
         </LinearLayout>
     </ScrollView>
 

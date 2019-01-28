@@ -27,12 +27,12 @@ public class TaskBottomActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
+//            Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
             Fragment fragment=new CustomersFragment();;
             switch (item.getItemId()) {
                 case R.id.list_of_all_customers:
                     fragment=new CustomersFragment();
-                    Toast.makeText(TaskBottomActivity.this,"Customer Fragment",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(TaskBottomActivity.this,"Customer Fragment",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.list_of_all_delivery_area:
                     fragment=new ListofAllDeliveryAreasFragment();
@@ -76,7 +76,7 @@ public class TaskBottomActivity extends AppCompatActivity {
                  default: return false;
 
             }
-            Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
+//            Toast.makeText(TaskBottomActivity.this,item.getItemId()+"",Toast.LENGTH_LONG).show();
             setFragment(fragment);
             return true;
         }
@@ -94,7 +94,7 @@ public class TaskBottomActivity extends AppCompatActivity {
     }
 
     private void setFragment(Fragment fragment) {
-        Toast.makeText(TaskBottomActivity.this,fragment+"",Toast.LENGTH_LONG).show();
+//        Toast.makeText(TaskBottomActivity.this,fragment+"",Toast.LENGTH_LONG).show();
 
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();

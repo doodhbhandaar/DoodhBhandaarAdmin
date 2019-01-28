@@ -17,7 +17,7 @@
         android:title="Areas" />
     <item
         android:id="@+id/list_of_all_delivery_boys"
-        android:icon="@drawable/statistics_pic"
+        android:icon="@drawable/ic_trending_up_black_24dp"
         android:title="Statistics" />
     <item
         android:id="@+id/Logout"
