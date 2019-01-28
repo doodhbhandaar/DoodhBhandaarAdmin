@@ -1,6 +1,7 @@
 package com.doodhbhandaar.dbadmin;
 
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -59,6 +60,9 @@ public class ListOfAllAreasFragment extends Fragment {
         });
         recyclerView = view.findViewById(R.id.areas_recycler_view);
         areaItems = new ArrayList<>();
+        final ProgressDialog pd = new ProgressDialog(getContext());
+        pd.setMessage("loading");
+        pd.show();
 
         FirebaseApp.initializeApp(getContext());
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
@@ -70,6 +74,7 @@ public class ListOfAllAreasFragment extends Fragment {
                 areaItems.add(ss);
 //                Toast.makeText(getContext(),s+ " +",Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
+                pd.dismiss();
             }
 
             @Override
