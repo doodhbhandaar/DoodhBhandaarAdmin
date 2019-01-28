@@ -79,13 +79,13 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
             }
         });
 
-        for(int i=0;i<10;i++){
-            DeliveryBoyReference deliveryBoyReference = new DeliveryBoyReference();
-            deliveryBoyReference.address="address";
-            deliveryBoyReference.name="name";
-            deliveryBoyReference.contactNo="phonenumber11";
-            deliveryBoyItems.add(deliveryBoyReference);
-        }
+//        for(int i=0;i<10;i++){
+//            DeliveryBoyReference deliveryBoyReference = new DeliveryBoyReference();
+//            deliveryBoyReference.address="address";
+//            deliveryBoyReference.name="name";
+//            deliveryBoyReference.contactNo="phonenumber11";
+//            deliveryBoyItems.add(deliveryBoyReference);
+//        }
         adapter = new ListOfAllDeliveryAreasAdapter(getContext(),deliveryBoyItems);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);

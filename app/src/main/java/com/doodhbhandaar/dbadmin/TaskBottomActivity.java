@@ -1,13 +1,18 @@
 package com.doodhbhandaar.dbadmin;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import static com.google.firebase.auth.FirebaseAuth.getInstance;
@@ -34,8 +39,32 @@ public class TaskBottomActivity extends AppCompatActivity {
                     break;
                 case R.id.Logout:
                     // Code for logout
-                    getInstance().signOut();
-                    finish();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(TaskBottomActivity.this);
+
+                    builder.setTitle("Logout");
+                    builder.setCancelable(true);
+                    builder.setMessage("Are you sure");
+                    builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                            getInstance().signOut();
+                            Intent intent = new Intent(TaskBottomActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //TODO
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
                     break;
                 case R.id.navigation_notifications2:
                     // Code for logout

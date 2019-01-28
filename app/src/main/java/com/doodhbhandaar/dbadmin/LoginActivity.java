@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.app.ProgressDialog;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -30,6 +31,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,10 +91,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent intent = new Intent(LoginActivity.this, TaskBottomActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            // No user is signed in
+        }
 
     }
 
     public void loginToTaskActivity() {
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setMessage("loading");
+        pd.show();
         String username = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         mEmailView.setText("");
@@ -111,6 +125,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    pd.dismiss();
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, TaskBottomActivity.class);
                     startActivity(intent);
