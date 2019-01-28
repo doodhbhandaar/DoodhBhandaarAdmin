@@ -50,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="50dp"
+                android:id="@+id/pnotext"
                 android:text="Contact No"/>
         </RelativeLayout>
 
@@ -62,6 +63,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/Addresstext"
                 android:textSize="50dp"
                 android:text="Address"/>
         </RelativeLayout>
