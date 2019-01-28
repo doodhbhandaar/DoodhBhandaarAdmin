@@ -1,6 +1,7 @@
 package com.doodhbhandaar.dbadmin;
 
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -48,6 +49,9 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
         recyclerView = output.findViewById(R.id.list_of_all_delivery_area_recyclerview);
         deliveryBoyItems = new ArrayList<>();
+        final ProgressDialog pd = new ProgressDialog(getContext());
+        pd.setMessage("loading");
+        pd.show();
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
         deliveryBoyReference.addChildEventListener(new ChildEventListener() {
@@ -56,6 +60,7 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
                 DeliveryBoyReference deliveryBoyReference = dataSnapshot.getValue(DeliveryBoyReference.class);
                 deliveryBoyItems.add(deliveryBoyReference);
                 adapter.notifyDataSetChanged();
+                pd.dismiss();
             }
 
             @Override
