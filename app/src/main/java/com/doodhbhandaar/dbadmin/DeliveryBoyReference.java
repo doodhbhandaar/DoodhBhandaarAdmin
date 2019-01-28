@@ -12,4 +12,6 @@ public class DeliveryBoyReference {
     public String contactNo;
     public String address;
     public ArrayList<Integer> cidList;
+    public String latitude;
+    public String longitude;
 }

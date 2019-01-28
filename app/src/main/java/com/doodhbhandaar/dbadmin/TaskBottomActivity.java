@@ -31,14 +31,17 @@ public class TaskBottomActivity extends AppCompatActivity {
             Fragment fragment=new CustomersFragment();;
             switch (item.getItemId()) {
                 case R.id.list_of_all_customers:
+                    setTitle("List of All Customers");
                     fragment=new CustomersFragment();
 //                    Toast.makeText(TaskBottomActivity.this,"Customer Fragment",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.list_of_all_delivery_area:
+                    setTitle("List of All Delivery Areas");
                     fragment=new ListofAllDeliveryAreasFragment();
                     break;
                 case R.id.Logout:
                     // Code for logout
+                    setTitle("Logout");
                     AlertDialog.Builder builder = new AlertDialog.Builder(TaskBottomActivity.this);
 
                     builder.setTitle("Logout");
@@ -68,6 +71,7 @@ public class TaskBottomActivity extends AppCompatActivity {
                     break;
                 case R.id.navigation_notifications2:
                     // Code for logout
+                    setTitle("List of All Area");
                     fragment=new ListOfAllAreasFragment();
                     break;
                 case R.id.list_of_all_delivery_boys:
@@ -86,7 +90,7 @@ public class TaskBottomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_bottom);
-
+        setTitle("List of All Customers");
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

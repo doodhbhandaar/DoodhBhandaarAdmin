@@ -1,9 +1,11 @@
 package com.doodhbhandaar.dbadmin;
 
 public class CustomerData{ //jkgjk
-    String customerImage;
-    String customerPhonenumber;
-    String customerName;
-    String customerAddress;
+    public String latitude;
+    public String longitude;
+    public String customerImage;
+    public String customerPhonenumber;
+    public String customerName;
+    public String customerAddress;
 
 }

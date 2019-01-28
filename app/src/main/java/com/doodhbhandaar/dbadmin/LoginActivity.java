@@ -106,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void loginToTaskActivity() {
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setMessage("loading");
+        pd.setCanceledOnTouchOutside(false);
         pd.show();
         String username = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
@@ -130,6 +131,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     Intent intent = new Intent(LoginActivity.this, TaskBottomActivity.class);
                     startActivity(intent);
                     finish();
+                }else{
+                    Toast.makeText(LoginActivity.this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
+                    pd.dismiss();
                 }
             }
         });

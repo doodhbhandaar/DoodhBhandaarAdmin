@@ -51,6 +51,7 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
         deliveryBoyItems = new ArrayList<>();
         final ProgressDialog pd = new ProgressDialog(getContext());
         pd.setMessage("loading");
+        pd.setCanceledOnTouchOutside(false);
         pd.show();
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
@@ -131,6 +132,11 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
                 deliveryBoyReferenceObject.address = address;
                 deliveryBoyReferenceObject.name = name;
                 deliveryBoyReferenceObject.contactNo = phone;
+                deliveryBoyReferenceObject.latitude="77.2.4";
+                deliveryBoyReferenceObject.longitude = "564.35";
+                deliveryBoyReferenceObject.cidList = new ArrayList<>();
+                deliveryBoyReferenceObject.cidList.add(1);
+                deliveryBoyReferenceObject.cidList.add(2);
                 deliveryBoyReference.push().setValue(deliveryBoyReferenceObject);
                 adapter.notifyDataSetChanged();
             }
