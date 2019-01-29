@@ -22,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -99,12 +100,57 @@ public class ListOfAllAreasFragment extends Fragment {
         });
 
 
-        adapter = new AreasAdapter(getContext(),areaItems);
+        AreasInterface areasInterface = new AreasInterface() {
+            @Override
+            public void onViewClick(View view, final int position) {
+                final String area = areaItems.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                builder.setTitle("Delete");
+                builder.setCancelable(true);
+                builder.setMessage("Are you sure to delete "+area);
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        deleteArea(area,position);
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //code for negative button
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        };
+        adapter = new AreasAdapter(getContext(),areaItems,areasInterface);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         return view;
+    }
+
+    private void deleteArea(String area, final int position) {
+        Query deleteDB = areasReference.orderByValue().equalTo(area);
+        deleteDB.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot d:dataSnapshot.getChildren()){
+                    d.getRef().removeValue();
+                }
+                areaItems.remove(position);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void addArea() {

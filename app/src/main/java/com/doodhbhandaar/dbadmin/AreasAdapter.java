@@ -13,10 +13,12 @@ public class AreasAdapter extends RecyclerView.Adapter<ViewHolderListOfAllAreas>
 
     ArrayList<String> areasList;
     LayoutInflater inflater;
+    AreasInterface areasInterface;
 
-    public AreasAdapter(Context context, ArrayList<String> areas) {
+    public AreasAdapter(Context context, ArrayList<String> areas,AreasInterface areasInterface) {
         inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         areasList = areas;
+        this.areasInterface = areasInterface;
     }
 
     @NonNull
@@ -27,9 +29,16 @@ public class AreasAdapter extends RecyclerView.Adapter<ViewHolderListOfAllAreas>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderListOfAllAreas holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderListOfAllAreas holder, final int position) {
         String s = areasList.get(position);
         holder.textView.setText(s);
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                areasInterface.onViewClick(v,position);
+                return false;
+            }
+        });
     }
 
     @Override
