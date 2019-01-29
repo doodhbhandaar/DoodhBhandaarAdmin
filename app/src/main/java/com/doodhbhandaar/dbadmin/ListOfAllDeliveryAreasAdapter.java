@@ -14,12 +14,13 @@ public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHold
 
     ArrayList<DeliveryBoyReference> deliveryBoyItems;
     LayoutInflater inflater;
+    ListOfAllDeliveryBoyInterface deliveryBoyInterface;
 
 
-    public ListOfAllDeliveryAreasAdapter(Context context,ArrayList<DeliveryBoyReference> deliveryAreasItems){
+    public ListOfAllDeliveryAreasAdapter(Context context,ArrayList<DeliveryBoyReference> deliveryAreasItems,ListOfAllDeliveryBoyInterface deliveryBoyInterface){
         inflater=(LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         this.deliveryBoyItems=deliveryAreasItems;
-
+        this.deliveryBoyInterface = deliveryBoyInterface;
     }
 
     @NonNull
@@ -30,11 +31,18 @@ public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderListOfAllDeliveryAreas holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderListOfAllDeliveryAreas holder, final int position) {
         DeliveryBoyReference deliveryBoyReference = deliveryBoyItems.get(position);
         holder.deliveryboyName.setText(deliveryBoyReference.name);
         holder.deliveryboyPhonenumber.setText(deliveryBoyReference.contactNo);
         holder.deliveryboyAddress.setText(deliveryBoyReference.address);
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                deliveryBoyInterface.onViewLongClick(v,position);
+                return false;
+            }
+        });
 
     }
 

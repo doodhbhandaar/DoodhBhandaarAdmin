@@ -3,6 +3,7 @@ package com.doodhbhandaar.dbadmin;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,14 +16,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 
 /**
@@ -92,7 +98,34 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 //            deliveryBoyReference.contactNo="phonenumber11";
 //            deliveryBoyItems.add(deliveryBoyReference);
 //        }
-        adapter = new ListOfAllDeliveryAreasAdapter(getContext(),deliveryBoyItems);
+        ListOfAllDeliveryBoyInterface deliveryBoyInterface = new ListOfAllDeliveryBoyInterface() {
+            @Override
+            public void onViewLongClick(View view, final int position) {
+                final String contactNo = deliveryBoyItems.get(position).contactNo;
+                String name = deliveryBoyItems.get(position).name;
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                builder.setTitle("Delete");
+                builder.setCancelable(true);
+                builder.setMessage("Are you sure to Delete "+name);
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        deleteDeliveryBoy(contactNo,position);
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //TODO
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        };
+        adapter = new ListOfAllDeliveryAreasAdapter(getContext(),deliveryBoyItems,deliveryBoyInterface);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -109,6 +142,25 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
         */
         return output;
+    }
+
+    private void deleteDeliveryBoy(String contactNo, final int position) {
+        Query deleteDB = deliveryBoyReference.orderByChild("contactNo").equalTo(contactNo);
+        deleteDB.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot d:dataSnapshot.getChildren()){
+                    d.getRef().removeValue();
+                }
+                deliveryBoyItems.remove(position);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void addDeliveryboy() {
