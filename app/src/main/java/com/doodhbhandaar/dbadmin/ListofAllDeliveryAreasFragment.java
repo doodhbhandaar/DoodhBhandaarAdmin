@@ -5,12 +5,14 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +29,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -41,6 +47,8 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
     ListOfAllDeliveryAreasAdapter adapter;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference deliveryBoyReference;
+    FirebaseStorage firebaseStorage;
+    StorageReference storageReference;
 
     public ListofAllDeliveryAreasFragment() {
         // Required empty public constructor
@@ -55,10 +63,16 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
         recyclerView = output.findViewById(R.id.list_of_all_delivery_area_recyclerview);
         deliveryBoyItems = new ArrayList<>();
+
         final ProgressDialog pd = new ProgressDialog(getContext());
         pd.setMessage("loading");
         pd.setCanceledOnTouchOutside(false);
         pd.show();
+
+        firebaseStorage=FirebaseDatabaseReference.getStorageINSTANCE();
+        storageReference=firebaseStorage.getReference("DeliveryBoyImage/");
+
+
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
         deliveryBoyReference.addChildEventListener(new ChildEventListener() {
@@ -101,8 +115,10 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
         ListOfAllDeliveryBoyInterface deliveryBoyInterface = new ListOfAllDeliveryBoyInterface() {
             @Override
             public void onViewLongClick(View view, final int position) {
-                final String contactNo = deliveryBoyItems.get(position).contactNo;
-                String name = deliveryBoyItems.get(position).name;
+                DeliveryBoyReference deliveryBoyReference= deliveryBoyItems.get(position);
+                final String contactNo =deliveryBoyReference.contactNo;
+                final String imgname=deliveryBoyReference.imageNameInDb;
+                String name = deliveryBoyReference.name;
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
                 builder.setTitle("Delete");
@@ -111,6 +127,7 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        deletePicture(imgname);
                         deleteDeliveryBoy(contactNo,position);
                     }
                 });
@@ -144,6 +161,26 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
         return output;
     }
 
+    private void deletePicture(String imgname) {
+        Log.i("image",imgname+" ");
+        if(imgname==null)
+            return;
+        StorageReference fileReference = storageReference.child(imgname);
+
+// Delete the file
+        fileReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getContext(),"picture is deleted",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Toast.makeText(getContext(),"picture is not deleted",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void deleteDeliveryBoy(String contactNo, final int position) {
         Query deleteDB = deliveryBoyReference.orderByChild("contactNo").equalTo(contactNo);
         deleteDB.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -164,42 +201,46 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
     }
 
     private void addDeliveryboy() {
+//
+//        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//        View dialogView = getLayoutInflater().inflate(R.layout.activity_register_delivery_man,null);
+//        builder.setView(dialogView);
+//
+//        final EditText nameEditText = dialogView.findViewById(R.id.register_deliveryboy_name);
+//        final EditText phoneEditText = dialogView.findViewById(R.id.register_deliveryboy_phonenumber);
+//        final EditText addressEditText=dialogView.findViewById(R.id.register_deliveryboy_address);
+//
+//        builder.setTitle("Add Delivery Boy");
+//        builder.setPositiveButton("register", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                String name = nameEditText.getText().toString();
+//                String phone = phoneEditText.getText().toString();
+//                String address = addressEditText.getText().toString();
+//                DeliveryBoyReference deliveryBoyReferenceObject = new DeliveryBoyReference();
+//                deliveryBoyReferenceObject.address = address;
+//                deliveryBoyReferenceObject.name = name;
+//                deliveryBoyReferenceObject.contactNo = phone;
+//                deliveryBoyReferenceObject.latitude="77.2.4";
+//                deliveryBoyReferenceObject.longitude = "564.35";
+//                deliveryBoyReferenceObject.cidList = new ArrayList<>();
+//                deliveryBoyReferenceObject.cidList.add(1);
+//                deliveryBoyReferenceObject.cidList.add(2);
+//                deliveryBoyReference.push().setValue(deliveryBoyReferenceObject);
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+//        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//
+//            }
+//        });
+//        builder.create().show();
 
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        View dialogView = getLayoutInflater().inflate(R.layout.activity_register_delivery_man,null);
-        builder.setView(dialogView);
+        Intent intent=new Intent(getContext(),RegisterDeliveryManActivity.class);
+        startActivity(intent);
 
-        final EditText nameEditText = dialogView.findViewById(R.id.register_deliveryboy_name);
-        final EditText phoneEditText = dialogView.findViewById(R.id.register_deliveryboy_phonenumber);
-        final EditText addressEditText=dialogView.findViewById(R.id.register_deliveryboy_address);
-
-        builder.setTitle("Add Delivery Boy");
-        builder.setPositiveButton("register", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                String name = nameEditText.getText().toString();
-                String phone = phoneEditText.getText().toString();
-                String address = addressEditText.getText().toString();
-                DeliveryBoyReference deliveryBoyReferenceObject = new DeliveryBoyReference();
-                deliveryBoyReferenceObject.address = address;
-                deliveryBoyReferenceObject.name = name;
-                deliveryBoyReferenceObject.contactNo = phone;
-                deliveryBoyReferenceObject.latitude="77.2.4";
-                deliveryBoyReferenceObject.longitude = "564.35";
-                deliveryBoyReferenceObject.cidList = new ArrayList<>();
-                deliveryBoyReferenceObject.cidList.add(1);
-                deliveryBoyReferenceObject.cidList.add(2);
-                deliveryBoyReference.push().setValue(deliveryBoyReferenceObject);
-                adapter.notifyDataSetChanged();
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        builder.create().show();
 
     }
 
