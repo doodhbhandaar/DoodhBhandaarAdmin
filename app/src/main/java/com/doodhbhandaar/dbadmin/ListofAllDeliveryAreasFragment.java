@@ -75,6 +75,7 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
         firebaseDatabase = FirebaseDatabaseReference.getDatabaseInstance();
         deliveryBoyReference = firebaseDatabase.getReference("DELIVERYBOY");
+
         deliveryBoyReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -87,10 +88,14 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
+                Log.i("fail","fail");
+
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                Log.i("fail","fail");
 
             }
 
@@ -101,7 +106,7 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.i("fail1","fail");
             }
         });
 

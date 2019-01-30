@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -132,10 +133,9 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this,"ss  "+data.getData(),Toast.LENGTH_LONG).show();
-        if(requestCode==IMAGE_REQUEST_CODE){
+       Log.i("result",""+resultCode);
+        if(requestCode==IMAGE_REQUEST_CODE&&resultCode==RESULT_OK){
             mimageUri=data.getData();
-            Toast.makeText(this,""+mimageUri,Toast.LENGTH_LONG).show();
             Picasso.get().load(mimageUri).into(imageView);
         }
     }
