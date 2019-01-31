@@ -83,6 +83,8 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
                 uploadimage();
             }
         });
+
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +121,7 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
 
         else{
             Toast.makeText(this,"Image is not chossen",Toast.LENGTH_LONG).show();
+            addDeliveryboy();
         }
 
     }
@@ -159,6 +162,21 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
         deliveryBoyReferenceObject.cidList.add(1);
         deliveryBoyReferenceObject.cidList.add(2);
         deliveryBoyReferenceObject.photoUrl=imageurl;
+        deliveryBoyReference.push().setValue(deliveryBoyReferenceObject);
+        pd.dismiss();
+        finish();
+    }
+    private void addDeliveryboy() {
+
+        DeliveryBoyReference deliveryBoyReferenceObject = new DeliveryBoyReference();
+        deliveryBoyReferenceObject.address = address;
+        deliveryBoyReferenceObject.name = name;
+        deliveryBoyReferenceObject.contactNo = phone;
+        deliveryBoyReferenceObject.latitude = "77.2.4";
+        deliveryBoyReferenceObject.longitude = "564.35";
+        deliveryBoyReferenceObject.cidList = new ArrayList<>();
+        deliveryBoyReferenceObject.cidList.add(1);
+        deliveryBoyReferenceObject.cidList.add(2);
         deliveryBoyReference.push().setValue(deliveryBoyReferenceObject);
         pd.dismiss();
         finish();

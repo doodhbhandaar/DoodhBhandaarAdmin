@@ -6,28 +6,31 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.3.0"
-    timestamp="1548813354698"
+    timestamp="1548954914004"
     token="1807861924788131066"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="763" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="127" />
     <task
         name="verifier"
-        duration="0" />
+        duration="18" />
 
     <artifact
-        location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
     <artifact
         location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
         type="SPLIT" />
     <artifact
         location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
@@ -51,9 +54,6 @@
         location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
         type="SPLIT" />
     <artifact
-        location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
         location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
         type="SPLIT" />
     <artifact
@@ -65,13 +65,16 @@
 
     <build
         build-mode="FULL"
-        timestamp="1548813354698"
+        timestamp="1548954914004"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
             location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
@@ -93,9 +96,6 @@
             type="SPLIT" />
         <artifact
             location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
             location="/home/shad0w/Desktop/DoodhBhandaarAdmin/app/build/intermediates/split-apk/debug/slices/slice_3.apk"

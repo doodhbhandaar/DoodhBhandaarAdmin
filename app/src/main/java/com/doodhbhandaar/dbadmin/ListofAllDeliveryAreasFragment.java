@@ -170,6 +170,8 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
         Log.i("image",imgname+" ");
         if(imgname==null)
             return;
+        if(imgname.length()==0)
+            return;
         StorageReference fileReference = storageReference.child(imgname);
 
 // Delete the file
