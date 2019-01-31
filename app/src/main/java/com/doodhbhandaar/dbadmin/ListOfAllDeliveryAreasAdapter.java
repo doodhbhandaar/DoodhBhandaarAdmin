@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHolderListOfAllDeliveryAreas> {
@@ -43,6 +45,9 @@ public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHold
                 return false;
             }
         });
+
+        Picasso.get().load(String.valueOf(deliveryBoyReference.photoUrl))
+                .fit().placeholder(R.color.colorPrimary).into(holder.deliveryboyImage);
 
     }
 

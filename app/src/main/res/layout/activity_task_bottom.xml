@@ -8,6 +8,7 @@
     tools:context=".TaskBottomActivity">
 
     <FrameLayout
+        android:layout_marginTop="1sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/launcher_Container"/>

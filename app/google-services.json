@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "527099760671-86qhiceolnfnpd7oman13trru2jjh336.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doodhbhandaar.dbadmin",
+            "certificate_hash": "69e6e8d5a92ab7041c76019fd4b177a876844c9d"
+          }
+        },
+        {
           "client_id": "527099760671-lij9oup5oo3kkebqttiekklfo9gg64hj.apps.googleusercontent.com",
           "client_type": 3
         }

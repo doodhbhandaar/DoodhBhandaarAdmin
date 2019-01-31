@@ -14,4 +14,5 @@ public class DeliveryBoyReference {
     public ArrayList<Integer> cidList;
     public String latitude;
     public String longitude;
+    public String imageNameInDb;
 }
