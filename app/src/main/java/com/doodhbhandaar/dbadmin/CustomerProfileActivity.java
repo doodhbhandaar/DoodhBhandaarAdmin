@@ -14,6 +14,7 @@ public class CustomerProfileActivity extends AppCompatActivity {
         String name=bundle.getString("name");
         String address=bundle.getString("Address");
         String pno=bundle.getString("PhoneNo");
+        String deliveryBoyName = bundle.getString("DBN");
         TextView NameText=(TextView)findViewById(R.id.textView);
         NameText.setText(name);
         TextView AddressText=(TextView)findViewById(R.id.Addresstext);

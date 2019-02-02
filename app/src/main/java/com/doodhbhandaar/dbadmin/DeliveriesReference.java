@@ -10,5 +10,5 @@ public class DeliveriesReference {
     public String phonenumber;
     public String latitude;
     public String longitude;
-    public int cid;
+    public String cid;
 }

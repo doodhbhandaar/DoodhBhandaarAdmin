@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_marginBottom="5sp"
-    android:layout_height="120sp">
+    android:layout_height="125sp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="2sp"
+        android:layout_height="120sp"
+        android:orientation="horizontal">
+
     <ImageView
         android:layout_width="0dp"
         android:layout_weight="2"
         android:id="@+id/customer_image"
         android:layout_height="match_parent"
-        android:src="@color/colorAccent"/>
+        app:srcCompat="@drawable/customers_pic"/>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="6"
@@ -26,6 +33,7 @@
                 android:id="@+id/customer_name"
                 android:layout_width="0dp"
                 android:layout_weight="5"
+                android:padding="5sp"
                 android:layout_height="match_parent"
                 android:text="Name"/>
 
@@ -79,4 +87,11 @@
         </LinearLayout>
 
     </LinearLayout>
+
+</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3sp"
+        android:background="#000000"
+        />
 </LinearLayout>

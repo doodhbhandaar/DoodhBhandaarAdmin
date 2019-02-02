@@ -82,26 +82,29 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
                 DeliveryBoyReference deliveryBoyReference = dataSnapshot.getValue(DeliveryBoyReference.class);
                 deliveryBoyItems.add(deliveryBoyReference);
                 adapter.notifyDataSetChanged();
-                pd.dismiss();
+                if(pd.isShowing())
+                    pd.dismiss();
+                Log.i("failuree","fail0");
+//                Toast.makeText(getContext(),"fail 0",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-                Log.i("fail","fail");
+                Log.i("fail","fail1");
 
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-                Log.i("fail","fail");
+                Log.i("fail","fail2");
 
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
+                Log.i("fail","fail1");
             }
 
             @Override

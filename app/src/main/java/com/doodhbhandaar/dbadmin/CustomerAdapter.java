@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerViewholder> {
@@ -40,6 +42,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerViewholder> {
                 customersInterface.onViewClick(v,position);
             }
         });
+//        Picasso.get().load(R.drawable.customer_pic)
+//                .fit().placeholder(R.color.colorPrimaryDark)
+//                .into(holder.customerImage);
     }
 
     @Override

@@ -56,8 +56,8 @@ public final class R {
         public static final int common_google_signin_btn_text_light_focused = 0x7f07006d;
         public static final int common_google_signin_btn_text_light_normal = 0x7f07006e;
         public static final int common_google_signin_btn_text_light_normal_background = 0x7f07006f;
-        public static final int googleg_disabled_color_18 = 0x7f070078;
-        public static final int googleg_standard_color_18 = 0x7f070079;
+        public static final int googleg_disabled_color_18 = 0x7f07007a;
+        public static final int googleg_standard_color_18 = 0x7f07007b;
     }
     public static final class id {
         private id() {}
@@ -67,17 +67,17 @@ public final class R {
         public static final int auto = 0x7f080027;
         public static final int center = 0x7f08002e;
         public static final int dark = 0x7f080041;
-        public static final int email = 0x7f080051;
-        public static final int icon_only = 0x7f080069;
-        public static final int light = 0x7f080074;
-        public static final int none = 0x7f08008f;
-        public static final int normal = 0x7f080090;
-        public static final int radio = 0x7f08009f;
-        public static final int standard = 0x7f0800cb;
-        public static final int text = 0x7f0800d2;
-        public static final int text2 = 0x7f0800d3;
-        public static final int wide = 0x7f0800eb;
-        public static final int wrap_content = 0x7f0800ee;
+        public static final int email = 0x7f080052;
+        public static final int icon_only = 0x7f08006b;
+        public static final int light = 0x7f080076;
+        public static final int none = 0x7f080091;
+        public static final int normal = 0x7f080092;
+        public static final int radio = 0x7f0800a1;
+        public static final int standard = 0x7f0800cd;
+        public static final int text = 0x7f0800d4;
+        public static final int text2 = 0x7f0800d5;
+        public static final int wide = 0x7f0800ed;
+        public static final int wrap_content = 0x7f0800f0;
     }
     public static final class integer {
         private integer() {}
