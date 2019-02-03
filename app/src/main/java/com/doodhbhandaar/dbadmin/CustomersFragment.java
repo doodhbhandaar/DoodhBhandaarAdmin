@@ -75,7 +75,15 @@ public class CustomersFragment extends Fragment {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+                CustomerData customerData = dataSnapshot.getValue(CustomerData.class);
+                String contactNo = customerData.customerPhonenumber;
+                for(int i=0;i<customerDataArrayList.size();i++){
+                    if(customerDataArrayList.get(i).customerPhonenumber==contactNo){
+                        customerDataArrayList.get(i).deliverBoyName = customerData.deliverBoyName;
+                        customerAdapter.notifyDataSetChanged();
+                        break;
+                    }
+                }
             }
 
             @Override

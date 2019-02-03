@@ -26,6 +26,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textColor="#990000"
             android:textSize="40dp"
             android:layout_below="@+id/img"
             android:layout_centerInParent="true"
@@ -49,7 +50,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="50dp"
+                android:textSize="30dp"
                 android:id="@+id/pnotext"
                 android:text="Contact No"/>
         </RelativeLayout>
@@ -64,8 +65,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/Addresstext"
-                android:textSize="50dp"
+                android:textSize="30dp"
                 android:text="Address"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/DBtext"
+                android:textSize="30dp"
+                android:text="Delivery Boy Name :"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/DeliveryTypeText"
+                android:textSize="30dp"
+                android:text="Delivery Type :"/>
+
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
