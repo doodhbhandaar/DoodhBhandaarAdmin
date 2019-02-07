@@ -168,7 +168,6 @@ public class ListOfAllAreasFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //Toast.makeText(MainActivity.this,"Ok Presses",Toast.LENGTH_LONG).show();
                 String newArea = "Panchawati ";
                 newArea = areaEditText.getText().toString();
                 areasReference.push().setValue(newArea);
@@ -178,7 +177,7 @@ public class ListOfAllAreasFragment extends Fragment {
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                //TODO
+
             }
         });
         AlertDialog dialog = builder.create();

@@ -1,4 +1,4 @@
-#Thu Jan 31 23:15:04 IST 2019
-base.0=C\:\\Users\\Shivam Kumar\\Documents\\DoodhbhandaarAdmin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+#Thu Feb 07 22:25:23 IST 2019
+base.0=C\:\\Users\\Shivam Kumar\\Documents\\DoodhBhandaarAdmin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

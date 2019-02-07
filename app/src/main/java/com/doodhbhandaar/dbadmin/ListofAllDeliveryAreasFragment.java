@@ -49,6 +49,8 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
     DatabaseReference deliveryBoyReference;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
+    String username;
+    String password;
 
     public ListofAllDeliveryAreasFragment() {
         // Required empty public constructor
@@ -122,6 +124,28 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 //        }
         ListOfAllDeliveryBoyInterface deliveryBoyInterface = new ListOfAllDeliveryBoyInterface() {
             @Override
+            public void onViewSingleClick(View view, int position) {
+                DatabaseReference deliveryBoyReferenceForUnP = firebaseDatabase.getReference("DELIVERYBOYUnP");
+                Query query = deliveryBoyReferenceForUnP.orderByChild("contactNo").equalTo(deliveryBoyItems.get(position).contactNo);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for(DataSnapshot d:dataSnapshot.getChildren()){
+                            DeliveryBoyPasswordReference deliveryBoyPasswordReference = d.getValue(DeliveryBoyPasswordReference.class);
+                            username = deliveryBoyPasswordReference.username;
+                            password = deliveryBoyPasswordReference.password;
+                        }
+                        showDialogForUnP();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
+
+            @Override
             public void onViewLongClick(View view, final int position) {
                 DeliveryBoyReference deliveryBoyReference= deliveryBoyItems.get(position);
                 final String contactNo =deliveryBoyReference.contactNo;
@@ -143,7 +167,6 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //TODO
                     }
                 });
                 AlertDialog dialog = builder.create();
@@ -167,6 +190,23 @@ public class ListofAllDeliveryAreasFragment extends Fragment {
 
         */
         return output;
+    }
+
+    private void showDialogForUnP() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        builder.setTitle("Username & Password");
+        builder.setCancelable(true);
+        builder.setMessage("Username: "+username+"\nPassword: "+password);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        username="";
+        password="";
     }
 
     private void deletePicture(String imgname) {

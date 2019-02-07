@@ -38,6 +38,12 @@ public class ListOfAllDeliveryAreasAdapter extends RecyclerView.Adapter<ViewHold
         holder.deliveryboyName.setText(deliveryBoyReference.name);
         holder.deliveryboyPhonenumber.setText(deliveryBoyReference.contactNo);
         holder.deliveryboyAddress.setText(deliveryBoyReference.address);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deliveryBoyInterface.onViewSingleClick(v,position);
+            }
+        });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

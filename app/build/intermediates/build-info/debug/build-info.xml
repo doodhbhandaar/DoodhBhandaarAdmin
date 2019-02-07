@@ -2,76 +2,122 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="23"
-    build-mode="COLD"
+    build-mode="FULL"
     density="xhdpi"
     format="10"
     plugin-version="3.3.0"
-    timestamp="1549139671427"
+    timestamp="1549561699734"
     token="5703272769022816503"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="538" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="113" />
     <task
         name="verifier"
-        duration="0" />
+        duration="60" />
 
     <artifact
-        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1549129252549"
+        timestamp="1549561699734"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1549133804041"
-        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -79,33 +125,47 @@
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Shivam Kumar\Documents\DoodhBhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1549139069323"
-        verifier="FIELD_ADDED" >
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1549139671427"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Shivam Kumar\Documents\DoodhbhandaarAdmin\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

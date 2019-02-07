@@ -27,6 +27,7 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class RegisterDeliveryManActivity extends AppCompatActivity {
      private static int IMAGE_REQUEST_CODE=5;
@@ -42,6 +43,8 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
      EditText nameEditText;
      EditText phoneEditText;
      EditText addressEditText;
+     String username;
+     String password;
     String name;
     String phone;
     String address;
@@ -71,6 +74,7 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
                 name = nameEditText.getText().toString();
                 phone = phoneEditText.getText().toString();
                 address = addressEditText.getText().toString();
+                makeUsernamePassword();
                 if(name.length()==0||phone.length()==0||address.length()==0){
                     Toast.makeText(RegisterDeliveryManActivity.this,"Field are empty\n fill proper data",Toast.LENGTH_LONG).show();
                     return;
@@ -91,6 +95,39 @@ public class RegisterDeliveryManActivity extends AppCompatActivity {
                 fileOpen();
             }
         });
+    }
+
+    private void makeUsernamePassword() {
+        DatabaseReference deliveryBoyReferenceUnP;
+        deliveryBoyReferenceUnP = firebaseDatabase.getReference("DELIVERYBOYUnP");
+        String n=name;
+        username="";
+        password = "";
+        for(int i=0;i<n.length()&&i<6;i++){
+            int x = ((n.charAt(i)+1)%26)+65;
+            char c = (char) x;
+            username = username + c;
+        }
+        Random random = new Random(System.currentTimeMillis());
+        long x = random.nextLong();
+        if(x<0)
+            x=-1*x;
+        x%=10000000;
+        String s = ""+x;
+        username = username + s;
+        random = new Random(System.currentTimeMillis());
+        x = random.nextInt();
+        if(x<0)
+            x=-1*x;
+        x%=100000000000L;
+        s = ""+x;
+        password = password + s;
+        DeliveryBoyPasswordReference deliveryBoyPasswordReference = new DeliveryBoyPasswordReference();
+        deliveryBoyPasswordReference.username = username;
+        deliveryBoyPasswordReference.password = password;
+        deliveryBoyPasswordReference.contactNo = phone;
+        deliveryBoyReferenceUnP.push().setValue(deliveryBoyPasswordReference);
+        Log.d("zzz",username+" "+password);
     }
 
     private void uploadimage() {
